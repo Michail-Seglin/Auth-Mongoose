@@ -1,5 +1,6 @@
 'use client'
 import Header from "../../components/Header/Header"
+import style from './style.module.css'
 
 export default function Reg() {
     return (
