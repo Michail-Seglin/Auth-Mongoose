@@ -1,6 +1,8 @@
 'use client'
 import Header from "../../components/Header/Header"
 import style from './style.module.css'
+import { withStyles } from "@material-ui/core/styles";
+import Button from "@material-ui/core/Button";
 
 export default function Reg() {
     return (
