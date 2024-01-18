@@ -6,6 +6,7 @@ import axios from 'axios'
 import Link from "next/link"
 import { useRouter } from 'next/navigation'
 import { useState } from 'react'
+import Header from '@/src/components/Header/Header'
 
 export default function Reg() {
     const [inpData, setInpData] = useState({})
@@ -33,25 +34,27 @@ export default function Reg() {
 
 
     return (
+        <div>
+            <Header />
+            <div className={style.wrapperReg}>
+                <h1>Registration</h1>
 
-        <div className={style.wrapperReg}>
-            <h1>Registration</h1>
+                <p>If you already have an account register</p>
+                <p>You can <Link href={'/auth'}> Login here ! </Link> </p>
 
-            <p>If you already have an account register</p>
-            <p>You can <Link href={'/auth'}> Login here ! </Link> </p>
+                <div className={style.inputForm}>
+                    {arr.map((el, i) =>
+                        <TextField key={i}
+                            id="standard-basic"
+                            label={el.label}
+                            variant="standard"
+                            name={el.name}
+                            onChange={getInputData}
+                        />
+                    )}
 
-            <div className={style.inputForm}>
-                {arr.map((el, i) =>
-                    <TextField key={i}
-                        id="standard-basic"
-                        label={el.label}
-                        variant="standard"
-                        name={el.name}
-                        onChange={getInputData}
-                    />
-                )}
-
-                <Button variant="contained" onClick={sendData}>Register</Button>
+                    <Button variant="contained" onClick={sendData}>Register</Button>
+                </div>
             </div>
         </div>
 

@@ -6,6 +6,7 @@ import axios from 'axios'
 import Link from "next/link"
 import { useRouter } from 'next/navigation'
 import { useState } from 'react'
+import Header from '@/src/components/Header/Header'
 
 export default function Auth() {
     const [inp, setInp] = useState({})
@@ -30,17 +31,20 @@ export default function Auth() {
     }
 
     return (
-        <div className={style.wrapperAuth}>
-            <h1>Login</h1>
+        <div>
+            <Header />
+            <div className={style.wrapperAuth}>
+                <h1>Login</h1>
 
-            <p>If you don`t have an account register</p>
-            <p>You can <Link href={'/reg'}> Register here ! </Link> </p>
+                <p>If you don`t have an account register</p>
+                <p>You can <Link href={'/reg'}> Register here ! </Link> </p>
 
-            <div className={style.inputForm}>
-                <TextField id="standard-basic" label="Email" variant="standard" onChange={getData} name='email' />
-                <TextField id="standard-basic" label="Password" variant="standard" onChange={getData} name='password' />
+                <div className={style.inputForm}>
+                    <TextField id="standard-basic" label="Email" variant="standard" onChange={getData} name='email' />
+                    <TextField id="standard-basic" label="Password" variant="standard" onChange={getData} name='password' />
 
-                <Button variant="contained" onClick={sendData}>Continue</Button>
+                    <Button variant="contained" onClick={sendData}>Continue</Button>
+                </div>
             </div>
         </div>
     )
