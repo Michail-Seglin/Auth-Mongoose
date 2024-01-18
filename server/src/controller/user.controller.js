@@ -8,7 +8,11 @@ route.post("/", async (req, res) => {
     try {
         const data = await createUser(req.body);
         const token = createToken(data[data.length - 1]);
-        res.cookie('neZnau', token);
+        res.cookie('acccess_token', token, {
+            httpOnly: false,
+            secure: true
+        });
+
         buildResponse(res, data, 200)
 
     } catch (er) {
@@ -19,6 +23,11 @@ route.post("/", async (req, res) => {
 route.post('/auth', async (req, res) => {
     try {
         const data = await authUser(req.body);
+
+        res.cookie('access_token', token, {
+            httpOnly: false,
+            secure: true
+        })
         buildResponse(res, data, 200);
     } catch (er) {
         buildResponse(res, er.message, 404)
