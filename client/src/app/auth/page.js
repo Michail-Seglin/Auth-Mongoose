@@ -20,7 +20,7 @@ export default function Auth() {
                 withCredentials: true
             });
 
-            if (!data.data) throw new Error('UUPS')
+            if (!data.data) throw new Error('error')
 
             route.push('/home')
         } catch (err) {

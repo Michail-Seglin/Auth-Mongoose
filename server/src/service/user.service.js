@@ -20,7 +20,6 @@ async function authUser(user) {
     const findUser = await getUserByEmailDB(user);
     if (!findUser.length) throw new Error('this email is invalid');
     if (!(await bcrypt.compare(user.password, findUser[0].password))) throw new Error('password is invalid');
-    const accessToken = createToken
     return findUser;
 
 }

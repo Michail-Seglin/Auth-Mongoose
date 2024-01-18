@@ -23,8 +23,8 @@ export default function Reg() {
                 withCredentials: true
             });
 
-            if (!data.data) throw new Error('УПС');
-            router.push('/');
+            if (!data.data) throw new Error('error');
+            router.push('/home+');
         } catch (err) {
             alert(err.message);
             return []

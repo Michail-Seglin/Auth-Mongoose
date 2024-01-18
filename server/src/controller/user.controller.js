@@ -23,7 +23,7 @@ route.post("/", async (req, res) => {
 route.post('/auth', async (req, res) => {
     try {
         const data = await authUser(req.body);
-
+        const token = createToken(data[0]);
         res.cookie('access_token', token, {
             httpOnly: false,
             secure: true
