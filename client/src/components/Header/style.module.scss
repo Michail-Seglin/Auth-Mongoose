@@ -1,4 +1,11 @@
 .all {
     display: flex;
     justify-content: space-around;
+
+    .regAuth {
+        display: flex;
+        justify-content: space-around;
+        width: 200px;
+    }
+
 }

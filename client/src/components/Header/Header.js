@@ -1,13 +1,15 @@
 import Link from "next/link"
 import style from './style.module.scss'
-
+import { Button } from "@mui/material"
 export default function Header() {
     return (
         <div className={style.all} >
-            <p><Link href={'/'}>Home</Link></p>
-            <p><Link href={'/auth'}>Sign in</Link></p>
-            <p><Link href={'/reg'}>Sign up</Link></p>
-        </div>
+            <Button variant='text' href={'/'} classname={style.signIn}>Home</Button>
+            <div className={style.regAuth} >
+                <Button variant='contained' href={'/auth'} classname={style.signIn}>Sign In</Button>
+                <Button variant='outlined' href={'/reg'} classname={style.signUp}>Sign Up</Button>
+            </div>
+        </div >
     )
 }
 
