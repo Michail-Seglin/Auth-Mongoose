@@ -7,6 +7,7 @@ import Link from "next/link"
 import { useRouter } from 'next/navigation'
 import { useState } from 'react'
 import Header from '@/src/components/Header/Header'
+import Footer from '@/src/components/Footer/Footer'
 
 export default function Reg() {
     const [inpData, setInpData] = useState({})
@@ -56,6 +57,7 @@ export default function Reg() {
                     <Button variant="contained" onClick={sendData}>Register</Button>
                 </div>
             </div>
+            <Footer />
         </div>
 
     )

@@ -7,6 +7,7 @@ import Link from "next/link"
 import { useRouter } from 'next/navigation'
 import { useState } from 'react'
 import Header from '@/src/components/Header/Header'
+import Footer from '@/src/components/Footer/Footer'
 
 export default function Auth() {
     const [inp, setInp] = useState({})
@@ -46,6 +47,7 @@ export default function Auth() {
                     <Button variant="contained" onClick={sendData}>Continue</Button>
                 </div>
             </div>
+            <Footer />
         </div>
     )
 }
