@@ -1,10 +1,14 @@
 'use client'
 
 import style from './style.module.scss'
+import { Button } from "@mui/material"
 
 export default function Footer() {
     return (
-        <p>Footer</p>
+        // <Button variant='text' href={'/'} classname={style.signIn}>Home</Button>
+        <div className={style.icon}>Footer</div>
+
+
     )
 }
 

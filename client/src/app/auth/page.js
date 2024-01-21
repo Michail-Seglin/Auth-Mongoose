@@ -43,7 +43,6 @@ export default function Auth() {
                 <div className={style.inputForm}>
                     <TextField id="standard-basic" label="Email" variant="standard" onChange={getData} name='email' />
                     <TextField id="standard-basic" label="Password" variant="standard" onChange={getData} name='password' />
-
                     <Button variant="contained" onClick={sendData}>Continue</Button>
                 </div>
             </div>
