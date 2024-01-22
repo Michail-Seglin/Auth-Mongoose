@@ -1,9 +1,14 @@
-const { createUserDB, getUserByEmailDB } = require('../repository/user.repository');;
+const { createUserDB, getUserByEmailDB, getUserAllDB } = require('../repository/user.repository');;
 const bcrypt = require('bcrypt');
 const createToken = require('../helper/jwt');
 
 
 const salt = 10;
+
+async function getUserAll() {
+    const data = await getUserDB();
+    return data;
+}
 
 async function createUser(user) {
     const findUser = await getUserByEmailDB(user);
@@ -23,4 +28,4 @@ async function authUser(user) {
     return findUser;
 
 }
-module.exports = { createUser, authUser }
+module.exports = { createUser, authUser, getUserAll }
