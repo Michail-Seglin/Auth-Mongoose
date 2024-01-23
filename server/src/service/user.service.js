@@ -1,4 +1,4 @@
-const { createUserDB, getUserByEmailDB, getUserAllDB } = require('../repository/user.repository');;
+const { createUserDB, getUserByEmailDB, getUserAllDB, updateUserDB } = require('../repository/user.repository');;
 const bcrypt = require('bcrypt');
 const createToken = require('../helper/jwt');
 
@@ -28,4 +28,9 @@ async function authUser(user) {
     return findUser;
 
 }
-module.exports = { createUser, authUser, getUserAll }
+
+async function updateUser(_id, user) {
+    const data = await updateUserDB(_id, user);
+    return data;
+}
+module.exports = { createUser, authUser, getUserAll, updateUser }

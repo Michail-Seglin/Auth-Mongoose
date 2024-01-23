@@ -15,4 +15,10 @@ async function getUserByEmailDB(user) {
     return data
 }
 
-module.exports = { createUserDB, getUserByEmailDB, getUserAllDB }
+async function updateUserDB(_id, user) {
+    await TableUser.updateOne({ _id: new ObjectId(_id) }, { $set: user });
+    const data = await TableUser.find();
+    return data;
+}
+
+module.exports = { createUserDB, getUserByEmailDB, getUserAllDB, updateUserDB }
