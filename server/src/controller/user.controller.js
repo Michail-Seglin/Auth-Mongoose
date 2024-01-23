@@ -48,7 +48,7 @@ route.put('/:_id', async (req, res) => {
         const data = await updateUser(req.params._id, req.body);
         buildResponse(res, data, 200);
     } catch (er) {
-        buildResponse()
+        buildResponse(res, er, 404)
     }
 })
 
