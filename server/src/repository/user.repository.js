@@ -21,4 +21,11 @@ async function updateUserDB(_id, user) {
     return data;
 }
 
-module.exports = { createUserDB, getUserByEmailDB, getUserAllDB, updateUserDB }
+async function deleteUserDB(_id) {
+    await TableUser.deleteOne({ _id: new ObjectId(_id) });
+
+    const data = await TableUser.find();
+    return data;
+}
+
+module.exports = { createUserDB, getUserByEmailDB, getUserAllDB, updateUserDB, deleteUserDB }
